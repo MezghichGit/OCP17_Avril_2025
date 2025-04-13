@@ -2,7 +2,7 @@ package day1_12042025.day2_13042025.heritage.classeAbstraite;
 
 public class TestAnimal {
 
-	public static void main(String[] args) {
+	public final static void main(String args[]) {
 		Animal animals[] = new Animal[4]; // création d'un tableau d'objets de type Animal
 
 		animals[0] = new Serpent();
