@@ -13,7 +13,7 @@ import day1_12042025.day2_13042025.lespackages.packB.*;
 import static day1_12042025.day2_13042025.lespackages.packA.UtilitaireMaths.*;
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String args []) {
 		Animal a = new Animal();
 		LocalDate ld = LocalDate.now();
 		InputStream io;
