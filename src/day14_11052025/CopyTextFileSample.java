@@ -30,8 +30,8 @@ public class CopyTextFileSample {
         }
     }
     public static void main(String[] args) throws IOException {
-        File source = new File("Zoo.csv");
-        File destination = new File("ZooCopy.csv");
+        File source = new File("C:\\Users\\Amine\\Desktop\\Plans\\animals.txt");
+        File destination = new File("C:/Users/Amine/Desktop/Plans/animals_copy.txt");
         List<String> data = readFile(source);
         for (String record : data) {
             System.out.println(record);
