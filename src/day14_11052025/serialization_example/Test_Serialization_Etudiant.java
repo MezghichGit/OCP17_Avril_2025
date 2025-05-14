@@ -12,41 +12,40 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
-
-	public static List<Animal> getAnimals(File dataFile) throws IOException, ClassNotFoundException {
-		List<Animal> animals = new ArrayList<Animal>();
+public class Test_Serialization_Etudiant {
+	public static List<Etudiant> getEtudiants(File dataFile) throws IOException, ClassNotFoundException {
+		List<Etudiant> etudiants = new ArrayList<Etudiant>();
 		try (ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dataFile)))) {
 			while (true) {
 				Object object = in.readObject(); // appel de constructeur??
-				if (object instanceof Animal) {
-					animals.add((Animal) object);
+				if (object instanceof Etudiant) {
+					etudiants.add((Etudiant) object);
 				}
 			}
 		} catch (EOFException e) {
 			// Fin de fichier atteinte
 			System.out.println("Fin du fichier...");
 		}
-		return animals;
+		return etudiants;
 	}
 
-	public static void createAnimalsFile(List<Animal> animals, File dataFile) throws IOException {
+	public static void createEtudiantsFile(List<Etudiant> etudiants, File dataFile) throws IOException {
 		try (ObjectOutputStream out = new ObjectOutputStream(
 				new BufferedOutputStream(new FileOutputStream(dataFile)))) {
-			for (Animal animal : animals) {
-				out.writeObject(animal);
+			for (Etudiant etudiant : etudiants) {
+				out.writeObject(etudiant);
 			}
 		}
 	}
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
-        List<Animal> animals = new ArrayList<Animal>();
-        animals.add(new Animal("Tommy Tiger", 5, 'T'));
-        animals.add(new Animal("Peter Penguin", 8, 'P'));
-        File dataFile = new File("animal.data");
-        createAnimalsFile(animals, dataFile); // serialization
-        System.out.println(getAnimals(dataFile)); // deserialization
+        List<Etudiant> etudiants = new ArrayList<Etudiant>();
+        etudiants.add(new Etudiant("Amine", 25, 1));
+        etudiants.add(new Etudiant("Peter", 28, 2));
+        File dataFile = new File("etudiants.data");
+        createEtudiantsFile(etudiants, dataFile); // serialization
+        System.out.println("********* Début du processus de déserialization... *********");
+        System.out.println(getEtudiants(dataFile)); // deserialization
     }
-
 
 }

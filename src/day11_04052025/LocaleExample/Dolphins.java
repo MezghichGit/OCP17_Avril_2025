@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 public class Dolphins {
 
 	public static void main(String[] args) {
+		
 		Locale fr = new Locale("fr");
 		Locale.setDefault(new Locale("en", "US"));
 		ResourceBundle b = ResourceBundle.getBundle("Dolphins");
