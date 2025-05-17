@@ -5,9 +5,11 @@ import java.nio.file.Paths;
 
 public class Test_Path {
 
+	
+
 	public static void main(String[] args) {
 		Path path1 = Paths.get("pandas", "cuddly.png");
-		//System.out.println(path1.toString());
+		// System.out.println(path1.toString());
 
 		Path path = Paths.get("/land/hippo/harry.happy");
 		System.out.println("The Path Name is: " + path);
