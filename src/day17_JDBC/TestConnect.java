@@ -30,6 +30,9 @@ public class TestConnect {
 			String name = rs.getString("name");
 			idToNameMap.put(id, name);
 		}
-		System.out.println(idToNameMap); 
+		ResultSet rs2 = stmt.executeQuery("select id, name from species");
+		System.out.println(idToNameMap);
+		System.out.println("Hello");
+		rs.next();
 	}
 }
