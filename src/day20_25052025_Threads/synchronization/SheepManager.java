@@ -1,4 +1,4 @@
-package day19_24052025_Threads.synchronization;
+package day20_25052025_Threads.synchronization;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
